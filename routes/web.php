@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,11 +19,18 @@ Route::get('/', function () {
 //web.phpを編集して、admin/profile/create にアクセスしたら ProfileController の add Action に、
 //admin/profile/edit にアクセスしたら ProfileController の edit Action に割り当てるように設定してください。
 
-
-
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('news/create', 'Admin\NewsController@add');
     Route::get('profile/create', 'Admin\ProfileController@add');
     Route::get('profile/edit', 'Admin\ProfileController@edit');
+    //Route::post('profile/create', 'Admin\ProfileController@create');
+    //Route::post('profile/edit', 'Admin\ProfileController@update');
+
 
 });
+
+
+Auth::routes();
+
+
+Route::get('/home', 'HomeController@index')->name('home');
