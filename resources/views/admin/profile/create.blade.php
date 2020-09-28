@@ -28,32 +28,37 @@
     </ul>
 @endif
 <div class="form-group row">
-    <label class="col-md-2" for="title">タイトル</label>
+    <label class="col-md-2" for="title">氏名</label>
     <div class="col-md-10">
-        <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+        <input type="text" class="form-control" name="shimei" value="{{ old('shimei') }}">
     </div>
 </div>
 <div class="form-group row">
-    <label class="col-md-2" for="body">本文</label>
+    <label class="col-md-2" for="title">性別</label>
     <div class="col-md-10">
-        <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
+        <input type="text" class="form-control" name="gender" value="{{ old('gender') }}">
     </div>
 </div>
 <div class="form-group row">
-    <label class="col-md-2" for="title">画像</label>
+    <label class="col-md-2" for="title">趣味</label>
     <div class="col-md-10">
-        <input type="file" class="form-control-file" name="image">
+        <input type="text" class="form-control" name="syumi" value="{{ old('syumi') }}">
     </div>
 </div>
+
+
+
+
+<div class="form-group row">
+    <label class="col-md-2" for="body">自己紹介欄</label>
+    <div class="col-md-10">
+        <textarea class="form-control" name="jikosyoukai" rows="20">{{ old('jikosyoukai') }}</textarea>
+    </div>
+</div>
+
 {{ csrf_field() }}
 <input type="submit" class="btn btn-primary" value="更新">
 </form>
-
-
-
-
-
-
 
 
 
