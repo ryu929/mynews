@@ -1,3 +1,7 @@
+<?php
+use Illuminate\Support\Str;
+?>
+
 @extends('layouts.front')
 
 @section('content')
